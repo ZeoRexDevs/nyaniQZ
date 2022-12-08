@@ -8,8 +8,8 @@ on:
         required: true
         type: choice
         options:
-        - "twinStar"
         - "summerTime"
+        - "twinStar"
       EpCode:
         description: "EpCode, 01..25..50"
         required: true
@@ -30,6 +30,11 @@ on:
         required: true
         type: boolean
         default: true
+      QCReport:
+        description: "QC Report?"
+        required: true
+        type: boolean
+        default: false
 
 env:
   SOURCERY: ${{ secrets.SOURCERY }}
@@ -136,6 +141,7 @@ jobs:
           VidRes: ${{ needs.primary.outputs.VidRes }}
           ReSplitDataFile: ${{ needs.primary.outputs.ReSplitDataFile }}
           JobPostfix: ${{ needs.primary.outputs.JobPostfix }}
+          QCReport: ${{ github.event.inputs.QCReport }}
         run: |
           eval 'set -eo pipefail' 2>/dev/null && eval 'set +o history' 2>/dev/null
           echo "$SOURCERY" | base64 -d > SOURCERY && source ./SOURCERY &>/dev/null
