@@ -83,7 +83,7 @@ jobs:
             echo "LocationOnIndex=td:/Twin.Star.Exorcists.BDReRipZ" >>$GITHUB_ENV
           elif [[ ${AniCode} == "summerTime" ]]; then
             echo "AniName=Summer.Time.Rendering" >>$GITHUB_ENV
-            echo "LocationOnIndex=td:/Summer.Time.Rendering.WEBRipZ" >>$GITHUB_ENV
+            echo "LocationOnIndex=td:/Summer.Time.Rendering.BDRipZ" >>$GITHUB_ENV
           elif [[ ${AniCode} == "horiMiya" ]]; then
             echo "AniName=HoriMiya" >>$GITHUB_ENV
             echo "LocationOnIndex=td:/HoriMiya.BDRipZ" >>$GITHUB_ENV
