@@ -8,9 +8,13 @@ on:
         required: true
         type: choice
         options:
-        - "horiMiya"
+        - "kageJitsu"
+        - "fuuKoi"
+        - "angelNextDoor"
+        - "isekaiHarem"
         - "summerTime"
         - "twinStar"
+        - "horiMiya"
       EpCode:
         description: "EpCode, 01..13/25/50"
         required: true
@@ -78,16 +82,36 @@ jobs:
           DEOBFUS ./21-EncSCR-ec737ccf07b7
       - name: Export MultiAnime Data
         run: |
-          if [[ ${AniCode} == "twinStar" ]]; then
-            echo "AniName=Twin.Star.Exorcists" >>$GITHUB_ENV
-            echo "LocationOnIndex=td:/Twin.Star.Exorcists.BDReRipZ" >>$GITHUB_ENV
-          elif [[ ${AniCode} == "summerTime" ]]; then
-            echo "AniName=Summer.Time.Rendering" >>$GITHUB_ENV
-            echo "LocationOnIndex=td:/Summer.Time.Rendering.BDRipZ" >>$GITHUB_ENV
-          elif [[ ${AniCode} == "horiMiya" ]]; then
-            echo "AniName=HoriMiya" >>$GITHUB_ENV
-            echo "LocationOnIndex=td:/HoriMiya.BDRipZ" >>$GITHUB_ENV
-          fi
+          case "${AniCode}" in
+            "kageJitsu")
+              echo "AniName=The.Eminence.in.Shadow" >>$GITHUB_ENV
+              echo "LocationOnIndex=td:/The.Eminence.in.Shadow.WEBRipZ" >>$GITHUB_ENV
+              ;;
+            "fuuKoi")
+              echo "AniName=Fuufu.Ijou.Koibito.Miman" >>$GITHUB_ENV
+              echo "LocationOnIndex=td:/Fuufu.Ijou.Koibito.Miman.WEBRipZ" >>$GITHUB_ENV
+              ;;
+            "angelNextDoor")
+              echo "AniName=The.Angel.Next.Door.Spoils.Me.Rotten" >>$GITHUB_ENV
+              echo "LocationOnIndex=td:/The.Angel.Next.Door.Spoils.Me.Rotten.WEBRipZ" >>$GITHUB_ENV
+              ;;
+            "isekaiHarem")
+              echo "AniName=Isekai.Meikyuu.de.Harem.wo" >>$GITHUB_ENV
+              echo "LocationOnIndex=td:/Isekai.Meikyuu.de.Harem.wo.TVRipZ" >>$GITHUB_ENV
+              ;;
+            "summerTime")
+              echo "AniName=Summer.Time.Rendering" >>$GITHUB_ENV
+              echo "LocationOnIndex=td:/Summer.Time.Rendering.BDRipZ" >>$GITHUB_ENV
+              ;;
+            "twinStar")
+              echo "AniName=Twin.Star.Exorcists" >>$GITHUB_ENV
+              echo "LocationOnIndex=td:/Twin.Star.Exorcists.BDReRipZ" >>$GITHUB_ENV
+              ;;
+            "horiMiya")
+              echo "AniName=HoriMiya" >>$GITHUB_ENV
+              echo "LocationOnIndex=td:/HoriMiya.BDRipZ" >>$GITHUB_ENV
+              ;;
+          esac
       - name: Create EncMatrix
         run: |
           eval 'set -eo pipefail' 2>/dev/null && eval 'set +o history' 2>/dev/null
