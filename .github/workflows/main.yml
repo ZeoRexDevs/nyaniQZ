@@ -9,14 +9,16 @@ on:
         type: choice
         options:
         - "kageJitsu"
-        - "fuuKoi"
         - "angelNextDoor"
+        - "demonSlayerS01"
+        - "demonSlayerS02"
+        - "fuuKoi"
         - "isekaiHarem"
         - "summerTime"
         - "twinStar"
         - "horiMiya"
       EpCode:
-        description: "EpCode, 01..13/25/50"
+        description: "EpCode, 01..13/18/20/25/26/50"
         required: true
         type: number
       SpeedProf:
@@ -87,13 +89,21 @@ jobs:
               echo "AniName=The.Eminence.in.Shadow" >>$GITHUB_ENV
               echo "LocationOnIndex=td:/The.Eminence.in.Shadow.WEBRipZ" >>$GITHUB_ENV
               ;;
-            "fuuKoi")
-              echo "AniName=Fuufu.Ijou.Koibito.Miman" >>$GITHUB_ENV
-              echo "LocationOnIndex=td:/Fuufu.Ijou.Koibito.Miman.WEBRipZ" >>$GITHUB_ENV
-              ;;
             "angelNextDoor")
               echo "AniName=The.Angel.Next.Door.Spoils.Me.Rotten" >>$GITHUB_ENV
               echo "LocationOnIndex=td:/The.Angel.Next.Door.Spoils.Me.Rotten.WEBRipZ" >>$GITHUB_ENV
+              ;;
+            "demonSlayerS01")
+              echo "AniName=Demon.Slayer.S01" >>$GITHUB_ENV
+              echo "LocationOnIndex=td:/Demon.Slayer.S01.BDRipZ" >>$GITHUB_ENV
+              ;;
+            "demonSlayerS02")
+              echo "AniName=Demon.Slayer.S02" >>$GITHUB_ENV
+              echo "LocationOnIndex=td:/Demon.Slayer.S02.BDRipZ" >>$GITHUB_ENV
+              ;;
+            "fuuKoi")
+              echo "AniName=Fuufu.Ijou.Koibito.Miman" >>$GITHUB_ENV
+              echo "LocationOnIndex=td:/Fuufu.Ijou.Koibito.Miman.WEBRipZ" >>$GITHUB_ENV
               ;;
             "isekaiHarem")
               echo "AniName=Isekai.Meikyuu.de.Harem.wo" >>$GITHUB_ENV
