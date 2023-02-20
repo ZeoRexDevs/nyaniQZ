@@ -8,8 +8,9 @@ on:
         required: true
         type: choice
         options:
-        - "kageJitsu"
         - "angelNextDoor"
+        - "tomoChan"
+        - "kageJitsu"
         - "demonSlayerS01"
         - "demonSlayerS02"
         - "fuuKoi"
@@ -85,13 +86,17 @@ jobs:
       - name: Export MultiAnime Data
         run: |
           case "${AniCode}" in
-            "kageJitsu")
-              echo "AniName=The.Eminence.in.Shadow" >>$GITHUB_ENV
-              echo "LocationOnIndex=td:/The.Eminence.in.Shadow.WEBRipZ" >>$GITHUB_ENV
-              ;;
             "angelNextDoor")
               echo "AniName=The.Angel.Next.Door.Spoils.Me.Rotten" >>$GITHUB_ENV
               echo "LocationOnIndex=td:/The.Angel.Next.Door.Spoils.Me.Rotten.WEBRipZ" >>$GITHUB_ENV
+              ;;
+            "tomoChan")
+              echo "AniName=Tomo-chan.Is.a.Girl" >>$GITHUB_ENV
+              echo "LocationOnIndex=td:/Tomo-chan.Is.a.Girl.WEBRipZ" >>$GITHUB_ENV
+              ;;
+            "kageJitsu")
+              echo "AniName=The.Eminence.in.Shadow" >>$GITHUB_ENV
+              echo "LocationOnIndex=td:/The.Eminence.in.Shadow.WEBRipZ" >>$GITHUB_ENV
               ;;
             "demonSlayerS01")
               echo "AniName=Demon.Slayer.S01" >>$GITHUB_ENV
